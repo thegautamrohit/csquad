@@ -1,8 +1,7 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.22 <0.9.0;
 
-pragma solidity >=0.7.0 <0.9.0;
-
-contract CSquadToken {
+contract CSquad {
     string public name = "CSquad Token";
     string public symbol = "CST";
     uint256 public totalSupply = 1000000000000000000000000; //1 million tokens
@@ -19,7 +18,7 @@ contract CSquadToken {
     mapping(address => uint256) balances;
     mapping(address => mapping(address => uint256)) allowed;
 
-    constructor() {
+    constructor() public {
         balances[msg.sender] = totalSupply;
         admin = msg.sender;
     }
