@@ -4,7 +4,7 @@ import { AppContext } from "@/context/AppContext";
 import Wallet from "@/components/WalletInfo";
 
 export default function Home() {
-  const { account, connectWallet, error }: any = useContext(AppContext);
+  const { account, loadBlockchainData, error }: any = useContext(AppContext);
   return (
     <main className="">
       <h1>MAIN PAGE</h1>
@@ -19,7 +19,7 @@ export default function Home() {
               <p className="shadow-border">{account}</p>
             </div>
           ) : (
-            <button className="btn shadow-border" onClick={connectWallet}>
+            <button className="btn shadow-border" onClick={loadBlockchainData}>
               Connect
             </button>
           )}
@@ -27,7 +27,7 @@ export default function Home() {
             <p className={`error shadow-border`}>{`Error: ${error}`}</p>
           )}
 
-          {account && <Wallet />}
+          {/* {account && <Wallet />} */}
         </div>
       </div>
     </main>
