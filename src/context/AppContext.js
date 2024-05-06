@@ -66,7 +66,9 @@ const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{ account, loadBlockchainData, error }}>
+    <AppContext.Provider
+      value={{ account, loadBlockchainData, error, CSquadData }}
+    >
       {children}
     </AppContext.Provider>
   );
